@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "02-pydantic-data-quality-e-tdd-aplicado-em-projeto-de-dados"
+version = "0.1.0"
+description = ""
+authors = ["Diogo Franco <dmfspfc12@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mkdocs = "^1.5.3"
+mkdocs-mermaid2-plugin = "^1.1.1"
+mkdocs-material = "^9.5.12"
+mkdocstrings = {extras = ["python"], version = "^0.24.1"}
+taskipy = "^1.12.2"
+isort = "^5.13.2"
+black = "^24.2.0"
+pytest = "^8.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.taskipy.tasks]
+format = """
+isort .
+black .
+"""
+kill = "kill -9 $(lsof -t -i :8000)"
+test = "pytest -v"
+run = """
+python3 app/main.py
+"""
+doc = "mkdocs serve"
