@@ -1,2 +1,2 @@
 def ola():
-    pass
+    return "Bom dia!"
