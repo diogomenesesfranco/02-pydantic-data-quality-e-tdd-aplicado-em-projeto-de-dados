@@ -118,6 +118,14 @@ optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
+name = "duckdb"
+version = "0.10.1"
+description = "DuckDB in-process database"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[[package]]
 name = "editorconfig"
 version = "0.12.4"
 description = "EditorConfig File Locator and Interpreter for Python"
@@ -1159,7 +1167,7 @@ python-versions = ">=3.6"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "35425efe91acbbca73422157746346b75466a30d86aa550edbb2c3ccfc297e8d"
+content-hash = "de497016ea04834c2cd1a9c7b9ca8a6253bcd5fd65fcd5d597e16492d9ca32e2"
 
 [metadata.files]
 annotated-types = []
@@ -1172,6 +1180,7 @@ chardet = []
 charset-normalizer = []
 click = []
 colorama = []
+duckdb = []
 editorconfig = []
 exceptiongroup = []
 frictionless = []
