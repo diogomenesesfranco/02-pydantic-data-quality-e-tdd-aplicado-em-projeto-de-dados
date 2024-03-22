@@ -39,7 +39,7 @@ def extrair_do_sql(query: str) -> pd.DataFrame:
 
 if __name__ == '__main__':
     query = 'SELECT * FROM produtos_bronze'
-    df_crm = extrair_do_sql(query=quit)
+    df_crm = extrair_do_sql(query=query)
     schema_crm = pa.infer_schema(df_crm)
     
     with open("schema-crm.py", "w", encoding="utf-8") as arquivo:
