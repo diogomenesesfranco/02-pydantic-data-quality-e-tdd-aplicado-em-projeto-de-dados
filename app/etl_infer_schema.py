@@ -6,8 +6,6 @@ import pandera as pa
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-from schema import ProdutoSchema
-
 
 def load_settings():
     """Carrega as variáveis de ambiente"""
@@ -25,7 +23,6 @@ def load_settings():
     return settings
 
 
-@pa.check_output(ProdutoSchema, lazy=True)
 def extrair_do_sql(query: str) -> pd.DataFrame:
     """Extrai os dados do banco de dados"""
     settings = load_settings()
@@ -45,3 +42,8 @@ def extrair_do_sql(query: str) -> pd.DataFrame:
 if __name__ == "__main__":
     query = "SELECT * FROM produtos_bronze"
     df_crm = extrair_do_sql(query=query)
+    schema_crm = pa.infer_schema(df_crm)
+
+    with open("schema-crm.py", "w", encoding="utf-8") as arquivo:
+        arquivo.write(schema_crm.to_script())
+    print(schema_crm)

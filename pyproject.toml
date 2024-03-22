@@ -16,6 +16,10 @@ black = "^24.2.0"
 pytest = "^8.1.0"
 pydantic = "^2.6.3"
 pandera = {extras = ["io"], version = "^0.18.0"}
+SQLAlchemy = "^2.0.28"
+python-dotenv = "^1.0.1"
+psycopg2 = "^2.9.9"
+psycopg2-binary = "^2.9.9"
 
 [tool.poetry.dev-dependencies]
 
